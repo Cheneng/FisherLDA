@@ -14,12 +14,9 @@ class FisherLDA(object):
         self.pos_num = 0
         self.neg_num = 0
     
-
     def read_data(self, positive_dataset, negative_dataset):
-        
         if isinstance(positive_dataset, list):
             self.pos_value = np.array(positive_dataset)
-        
         if isinstance(negative_dataset, list):
             self.neg_value = np.array(negative_dataset)
             
@@ -51,7 +48,7 @@ class FisherLDA(object):
         b = (Ahat*self.pos_num + Bhat*self.neg_num) / (self.pos_num + self.neg_num)
 
         return(W, b)
- #       return result
+
 
 if __name__ == '__main__':
     
