@@ -45,7 +45,7 @@ class FisherLDA(object):
         # 计算出bias
         Ahat = np.matmul(W, self.pos_average_value.T)
         Bhat = np.matmul(W, self.neg_average_value.T)
-        b = (Ahat*self.pos_num + Bhat*self.neg_num) / (self.pos_num + self.neg_num)
+        b = -(Ahat*self.pos_num + Bhat*self.neg_num) / (self.pos_num + self.neg_num)
 
         return(W, b)
 
